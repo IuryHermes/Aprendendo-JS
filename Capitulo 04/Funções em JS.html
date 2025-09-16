@@ -1,0 +1,67 @@
+<!--Funções são blocos de código reutilizãveis que realizam uma tarefa específica, eles são fundamentais para evitar repetições de codigo.
+a função e chamada com a palavra chave function, seguido por nome seguido por parenteses(), os parenteses podem incluir nomes de parametros separados por virgula.
+o codigo a ser executado pela função e colocado dentro de chaves {}-->
+
+<!DOCTYPE html>
+    <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Funções em JS</title>
+         </head>
+     <body>
+        <script>
+               function saudacao (nome){
+                console.log("olá," +nome+ "!");
+            }
+            saudacao("Maria");
+            /*Escopo de variaveis (global e local)
+            global = uma variável declarada fora de qualquer função é dita estar no escopo global e pode ser acessada em qualquer lugar no codigo como no exemplo abaixo:*/
+            var cor = "vermelho"; //variável global
+            function mostrarCor() {
+                console.log(cor);
+            }
+            mostrarCor();
+            /*Local = ela e uma variavel declarada dentro de uma função, ela pode ser acessada dentro da função, como o exemplo abaixo: */
+            function mostrarCarro (){
+                var carro = "Xsara Picasso"; //Variável local
+                console.log(carro)
+            }
+            mostrarCarro() //iumprime "Xasara Picasso"
+            //console.log(carro); // Erro carro is not defined "a variavel carro e local para a função mostrarCarro, tentar acessar fora da função resultará em erro, carro nao e definido no escopo global"
+            /*Variáveis com let e const
+            quando voce declara uma variável com let ou const dentro de um bloco de código(como dentro de uma instrução if ou um loop for), essa variável tem um escopo de bloco e só pode ser acessada dentro desse bloco, exemplo: */
+            function testarLet () {
+                if (true) {
+                    let x = 5; //x tem um escopo de bloco
+                }
+                console.log(x); //erro x is not defined "x é definida dentro do bloco if e não é acessada fora desse bloco"
+            }
+            /*Funções de alta ordem e funções de callback
+            Em js as funções são objetos de primeira classe, siguinifica que assim como objetos, funções podem ser atribuidas a variaveis, podem ser passada como argumentos para outras funções e podem ser retornadas para outras funções.
+            uma função que aceita outras funções como argumentos e/ou retorna uma função como resultado e conhecida como uma função de alta ordem.*/ 
+            
+            /* map()
+            map() e um exemplo de função de alta ordem, ele e um método de arrays em JS, ele aceita uma função como argumento e aplica essa função a cada elemento array, retornando um novo array como resultado.*/ 
+            //exemplo:
+            const numeros = [1, 2, 3, 4, 5];
+            const quadrados = numeros.map(function(n)
+            {
+                return n * n
+            });
+            console.log(quadrados)
+            
+            /*Função de callback
+            É passada como um argumento para outra função e é chamada (ou "executada de volta") em algum ponto dentro da função receptora, elas sao função de alta ordem.
+            por exemplo quando usamos o método map(), a função que passamos para o map() é uma função de callback.
+            exemplo: */ 
+            function comprimentar (callback) {
+                console.log(`Olá`);
+                callback();
+            }
+            function dizerNome(){
+                console.log(`João`)
+            }
+            comprimentar(dizerNome) 
+        </script>
+     </body>
