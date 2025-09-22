@@ -11,8 +11,41 @@
         //exercicío de função básica.
         function saudacao(nome){
           console.log("Olá " + nome + "!");
-    }
-    saudacao("iury");
+         }
+            saudacao("iury");
+         //função de soma
+         function soma(num1, num2){
+          return num1 + num2;
+          }
+   
+        //Função com estrutura condicional
+          function parOuImpar(num){
+            if (num % 2 === 0){ // % Operador Módulo: Este operador calcula o resto de uma divisão, (===) Operador de Igualdade Estrita: Este operador compara o resultado do módulo com zero.
+               return "Par";
+            }
+            else{
+               return "impar";
+            } 
+          }
+/* Explicação
+1. O Operador Módulo (%)
+O segredo dessa linha é o operador Módulo (%).
+O que é? O módulo não faz a divisão em si; ele retorna o RESTO da divisão.
+Exemplo Prático:
+Com um número PAR: 4 % 2 (4 dividido por 2) → O resultado é 2 e o resto é 0.
+Com um número ÍMPAR: 5 % 2 (5 dividido por 2) → O resultado é 2 e o resto é 1.
+Conclusão da Parte 1:
+Quando usamos num % 2, estamos verificando qual é o resto da divisão do seu número por 2.
+2. O Operador de Comparação Estrita (===)
+Você já sabe que o resultado de num % 2 será 0 ou 1 (ou outro número se for negativo, mas vamos focar nos positivos). Agora, precisamos perguntar: "Esse resto é zero?"
+É aí que entra o ===:
+O que é? Ele compara se o valor da esquerda é exatamente igual ao valor da direita, tanto em valor quanto em tipo (igualdade estrita).
+O que ele faz na linha: Ele verifica se o resto da divisão (num % 2) é igual ao número 0.
+Conclusão da Parte 2:
+A expressão completa num % 2 === 0 retorna:
+true (verdadeiro) se o resto for 0 (o número é par).
+false (falso) se o resto for 1 (o número é ímpar).
+    
     </script>
 
    </body>
