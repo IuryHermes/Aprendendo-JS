@@ -96,3 +96,17 @@ let frutas003 = ["pera","uva","caju"];
 frutas003.forEach(function(frutas003){
     console.log(frutas003)
 })
+
+//map(): cria um novo array com o resultado da chamada de uma função para cada elemento do array.
+let numeros0 = [1,2,3,4];
+let quadrados = numeros0.map(function(numero1){
+    return numero1 * numero1
+});
+console.log(quadrados)
+
+//filter(): cria um novo array com todos os elementos que passam no teste implementado pela função fornecida
+let numeros2 = [1,2,3,4,5];
+let numerosPares = numeros2.filter(function(numeros2){
+    return numeros2 % 2 === 0;
+});
+console.log(numerosPares);
