@@ -22,4 +22,8 @@ div.innerHTML= `<p> Este é um novo paragrafo. </p>`; //Insere um novo paragrafo
 let link= document.querySelector(`a`);
 link.setAttribute(`href`,`https://novosite.com`); //Altera o atributo href do link
 
+//ALTERAR ESTILOS: os estilos CSS de um elemento podem ser modificados através da propriedade style.
+let div= document.getElementById(`main`);
+div.style.color = `blue`; //muda a cor do texto para azul
+
 
