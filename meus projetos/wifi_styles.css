@@ -1,0 +1,166 @@
+/* --- ESTILOS GERAIS E FUNDO (Responsividade) --- */
+
+:root {
+    /* Definição de Cores - fácil de mudar */
+    --cor-primaria: #007bff; /* Azul vibrante para o botão */
+    --cor-secundaria: #0056b3; /* Azul escuro para hover */
+    --fundo-card: #ffffff; /* Fundo branco para o formulário */
+    --sombra-card: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Remove barras de rolagem desnecessárias */
+}
+
+/* Container de Fundo com a Imagem (1120x700.webp) */
+.background-container {
+    height: 100%;
+    width: 100%;
+    display: flex; /* Centraliza o card */
+    justify-content: center;
+    align-items: center;
+    
+    /* CORREÇÃO: Caminho da imagem de fundo está ajustado para a pasta 'imagens/' */
+    background-image: url('imagens/1120x700.webp'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Overlay para escurecer o fundo e dar destaque ao formulário */
+    position: relative;
+}
+
+/* Opcional: Adiciona um filtro de cor/escurecimento sobre a imagem de fundo */
+.background-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo escuro semi-transparente */
+    backdrop-filter: blur(2px); /* Efeito suave de desfoque */
+}
+
+/* --- ESTILOS DO CARD DE LOGIN --- */
+
+.login-card {
+    position: relative; /* Para ficar acima do overlay */
+    z-index: 10;
+    background-color: var(--fundo-card);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-card);
+    width: 100%;
+    max-width: 400px; /* Largura máxima em desktop */
+    text-align: center;
+}
+
+/* Garanta que seu HTML tenha src="imagens/pngegg.png" */
+.wifi-logo {
+    width: 180px;  /* Nova largura, mantendo o dobro da altura */
+    height: auto;  /* Altura calculada automaticamente (≈ 90px) */
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 0.9em;
+}
+
+/* --- ESTILOS DO FORMULÁRIO E INPUTS --- */
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: var(--cor-primaria);
+    outline: none;
+}
+
+/* --- ESTILOS DO BOTÃO --- */
+
+#connect-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+#connect-button:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* --- NOTAS E MENSAGENS --- */
+
+.privacy-note {
+    font-size: 0.75em;
+    margin-top: 20px;
+    color: #999;
+}
+
+.privacy-note a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.info-message {
+    color: green;
+    font-weight: bold;
+    min-height: 1.2em; /* Reserva espaço para a mensagem */
+    margin-bottom: 10px;
+}
+
+/* --- RESPONSIVIDADE PARA CELULARES --- */
+@media (max-width: 500px) {
+    .login-card {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+}
